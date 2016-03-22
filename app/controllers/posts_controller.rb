@@ -1,19 +1,29 @@
 class PostsController < ApplicationController
 
   def index
-  end
-
-  def create
+    @post = Post.all
   end
 
   def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.create(post_params)
+    if @post.save
+      redirect_to @post
+    else
+      render "new"
+    end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def edit
   end
 
-  def show
-  end
 
   def edit
   end
@@ -23,5 +33,11 @@ class PostsController < ApplicationController
 
   def destory
   end
-  
+
+  private
+
+  def post_params
+    params.require(:post).permit(:image, :caption)
+  end
+
 end
