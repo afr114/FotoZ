@@ -1,3 +1,8 @@
 <h1>FotoZ</h1>
 
+<% @post.each do |post| %>
+  <%= post.caption %>
+  <%= link_to image_tag(post.image.url(:medium)), post_path(post) %>
+<% end %>
+
 <%= link_to "New Post", new_post_path %>

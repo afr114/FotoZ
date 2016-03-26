@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
+      flash.now[:alert] = "Halt, you fiend! You need an image to post here!"
       render "new"
     end
   end
@@ -22,16 +23,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-  end
-
-
-  def edit
+    @post = Post.find(params[:id])
   end
 
   def update
   end
 
-  def destory
+  def destroy
   end
 
   private
