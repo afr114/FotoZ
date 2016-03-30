@@ -1,5 +1,18 @@
-<%= image_tag @post.image.url(:medium) %>
-<%= @post.caption %>
-
-<%= link_to "Edit Post", edit_post_path(@post) %>
-<%= link_to "Delete Post", post_path(@post), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+<body>
+  <div class="posts-wrapper row top-margin">
+    <div class="post">
+      <div class="post-head">
+      </div>
+      <div class="image center-block">
+        <%= image_tag @post.image.url(:medium) %>
+      </div>
+      <p class="caption">
+        <%= @post.caption %>
+      </p>
+      <div class="text-center edit-links">
+        <%= link_to "Edit Post", edit_post_path(@post) %>
+        <%= link_to "Delete Post", post_path(@post), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+      </div>
+    </div>
+  </div>
+</body>
