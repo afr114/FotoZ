@@ -19,27 +19,34 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
 }
 
 a.navbar-brand.topnav.home {
   color: white;
-  font-size:24px;
+  font-size:36px;
+  font-family: 'Pacifico', cursive;
 }
+
 nav.navbar.navbar-default.navbar-fixed-top.topnav {
   background-color: transparent;
   border-color: transparent;
+  margin-top:10px;
 }
 
 .navbar-default .navbar-nav>li>a.home {
   color: white;
   font-size:24px;
+  font-family: 'Raleway', sans-serif;
+  font-weight:600;
 }
 
 .navbar-default .navbar-nav>li>a.home:hover {
   color: white;
   font-size:24px;
+  border: 0.5px solid white;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
 }
 
 .navbar-default .navbar-nav>li>a.home:focus {
@@ -87,12 +94,15 @@ a.btn.btn-default.btn-lg.register {
 
 .intro-message > h3 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-weight:600;
 }
 
 .intro-message > h1 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 5em;
+    font-family: 'Raleway', sans-serif;
+    font-weight:800;
 }
 
 @media(max-width:450px) {

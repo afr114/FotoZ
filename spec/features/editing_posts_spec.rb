@@ -4,7 +4,7 @@ feature 'User can edit a post' do
   background do
     post_1 = create(:post, caption: "This is post1")
 
-    visit '/'
+    visit '/posts'
     find(:xpath, "//a[contains(@href,'posts/1')]").click
     click_link 'Edit Post'
   end

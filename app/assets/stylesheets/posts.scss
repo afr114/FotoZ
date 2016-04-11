@@ -7,16 +7,18 @@ body {
 }
 
 .navbar-brand {
-  a {
-    color: #125688;
-  }
+  font-family: 'Pacifico', cursive;
 }
 
+a.navbar-brand.topnav {
+  font-size:2em;
+  color: white;
+}
 .navbar-default {
-  background-color: #fff;
+  background-color: #000000;
   height: 54px;
   .navbar-nav li a {
-    color: #125688;
+    color: white;
   }
 }
 

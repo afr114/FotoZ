@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 
 feature 'User creates a post' do
   background do
-    visit '/'
+    visit '/posts'
     click_link 'New Post'
   end
 

@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem "paperclip", "~> 4.3"
+gem 'devise'
 
 group :test do
   gem 'shoulda-matchers'
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'pry'
 end
 
 group :development do
