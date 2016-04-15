@@ -1,6 +1,11 @@
 require 'rails_helper.rb'
 
 feature 'User can check index for list of all posts' do
+  background do
+    user = create(:user)
+    login_as(user, :scope => :user)
+  end
+  
   scenario 'they see the posts on the index page' do
     post_1 = create(:post, caption: "This is post1")
     post_2 = create(:post, caption: "This is post2")

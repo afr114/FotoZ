@@ -17,6 +17,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'pry'
+require 'warden'
 include Warden::Test::Helpers
 Warden.test_mode!
 RSpec.configure do |config|

@@ -2,6 +2,8 @@ require 'rails_helper.rb'
 
 feature 'User can delete a post' do
   background do
+    user = create(:user)
+    login_as(user, :scope => :user)
     post_1 = create(:post, caption: "This is post1")
     visit '/posts'
     find(:xpath, "//a[contains(@href,'posts/1')]").click

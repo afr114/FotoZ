@@ -4,7 +4,7 @@ feature 'User creates a post' do
   background do
     user = create(:user)
     login_as(user, :scope => :user)
-    # visit '/posts'
+    visit '/posts'
     click_link 'New Post'
   end
 
