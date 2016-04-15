@@ -2,7 +2,9 @@ require 'rails_helper.rb'
 
 feature 'User creates a post' do
   background do
-    visit '/posts'
+    user = create(:user)
+    login_as(user, :scope => :user)
+    # visit '/posts'
     click_link 'New Post'
   end
 

@@ -28,9 +28,15 @@
                   <li>
                       <a class="home" href="#about">About</a>
                   </li>
+                  <% if user_signed_in? %>
                   <li>
-                      <%= link_to "Log In", new_user_session_path, { class: 'home' } %>
+                    <%= link_to('Logout', destroy_user_session_path, {:method => :delete, class: 'home'}) %>
                   </li>
+                  <% else %>
+                  <li>
+                    <%= link_to "Log In", new_user_session_path, { class: 'home' } %>
+                  </li>
+                  <% end %>
               </ul>
           </div>
           <!-- /.navbar-collapse -->

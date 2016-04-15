@@ -11,6 +11,7 @@ feature 'User can register to website' do
     fill_in 'Password confirmation', with: 'password1'
     click_button 'Sign Up'
     expect(page).to have_content('Welcome! You have signed up successfully.')
+    expect(page).to have_content('New Post')
   end
 
   scenario 'requires a user name to successfully create an account' do

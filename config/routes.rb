@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }, :skip => [:sessions]
+  as :user do
+   get 'signin' => 'devise/sessions#new', :as => :new_user_session
+   post 'signin' => 'devise/sessions#create', :as => :user_session
+   delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+ end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'homepage#index'
+  root 'homepage#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -13,7 +19,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-     resources :posts
+  resources :posts
 
   # Example resource route with options:
   #   resources :products do
