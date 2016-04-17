@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, :except => :index
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -15,5 +15,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     :posts
+  end
+  #
+  def after_sign_out_path_for(resource)
+    root_path
   end
 end
