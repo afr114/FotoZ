@@ -14,6 +14,7 @@ feature 'User creates a post' do
     click_button 'Submit'
     expect(page).to have_content('#coffeetime')
     expect(page).to have_css("img[src*='coffee.jpg']")
+    expect(page).to have_content('Arnie')
   end
 
   it 'needs an image to create post' do

@@ -1,7 +1,9 @@
 <div class="posts-wrapper row top-margin">
-<% @post.each do |post| %>
+  <% unless @posts[0].id == nil %>
+<% @posts.each do |post| %>
   <div class="post">
     <div class="post-head">
+      <%= @user.username %>
     </div>
     <div class="image center-block">
       <%= link_to image_tag(post.image.url(:medium), class: 'img-responsive'), post_path(post)%>
@@ -9,6 +11,7 @@
     <p class="caption">
       <%= post.caption %>
     </p>
+    <% end %>
     <% end %>
   </div>
   <%= link_to "New Post", new_post_path %>

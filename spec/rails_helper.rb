@@ -37,6 +37,15 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+module AuthHelpers
+  def sign_in_with (user)
+    visit '/'
+    click_link 'Log In'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+  end
+end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -68,5 +77,6 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
+  config.include AuthHelpers, type: :feature
   config.extend ControllerMacros, :type => :controller
 end

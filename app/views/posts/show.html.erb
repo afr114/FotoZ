@@ -2,6 +2,7 @@
   <div class="posts-wrapper row top-margin">
     <div class="post">
       <div class="post-head">
+        <%= @user.username %>
       </div>
       <div class="image center-block">
         <%= image_tag @post.image.url(:medium) %>
